@@ -46,8 +46,8 @@ int main(){
       case 0: printf("Instruction 0. Halt the process.\n"); goto git;
       case 1: r1 = seq[i+1]; i += 2; printf("Instruction 1. Load R1 with the next number in the sequence. R1 <- [I+1],I <- I+2\n"); break;
       case 2: r2 = seq[i+1]; i += 2; printf("Instruction 2. Load R2 with the next number in the sequence. R2 <- [I+1],I <- I+2\n"); break;
-      case 3: r1 = seq[seq[i+1]]; i += 2; if(seq[i+1]>length||seq[i+1]<0){printf("Out of boundaries! Halt!\n");goto git;}printf("Instruction 3. Load R1 with the sequence element which is at the position given as the next number in the sequence. R1 <- [[I+1]], I <- I+2\n"); break;
-      case 4: r2 = seq[seq[i+1]]; i += 2; if(seq[i+1]>length||seq[i+1]<0){printf("Out of boundaries! Halt!\n");goto git;}printf("Instruction 4. Load R2 with the sequence element which is at the position given as the next number in the sequence. R2 <- [[I+1]], I <- I+2\n"); break;
+      case 3: r1 = seq[seq[i+1]];  if(seq[i+1]>length||seq[i+1]<0){printf("Out of boundaries! Halt!\n");goto git;}i += 2;printf("Instruction 3. Load R1 with the sequence element which is at the position given as the next number in the sequence. R1 <- [[I+1]], I <- I+2\n"); break;
+      case 4: r2 = seq[seq[i+1]];  if(seq[i+1]>length||seq[i+1]<0){printf("Out of boundaries! Halt!\n");goto git;}i += 2;printf("Instruction 4. Load R2 with the sequence element which is at the position given as the next number in the sequence. R2 <- [[I+1]], I <- I+2\n"); break;
       case 5: r1 = r2; i+=1; printf("Instruction 5. Load R1 with the content of R2. R1 <- R2 ,I <- I+1\n"); break;
       case 6: r1 = seq[r2]; i+=1; printf("Instruction 6. Load R1 with the sequence element which is at the position R2. R1 <- [R2], I <- I+1\n"); break;
       case 7: seq[r1] = r2;       if(seq[r1]>127||seq[r1]<-127){printf("Out of boundaries! Halt!\n");goto git;} i += 1; printf("Instruction 7. Change the sequence element which is at the position R1 to be the content of R2. [R1] <- R2, I <- I+1\n"); break;
