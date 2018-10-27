@@ -59,12 +59,12 @@ int solve(char* seq){
       case 0: goto git;
       case 1: r1 = seq[i+1]; i += 2;  break;
       case 2: r2 = seq[i+1]; i += 2;  break;
-      case 3: r1 = seq[seq[i+1]]; i += 2;  break;
-      case 4: r2 = seq[seq[i+1]]; i += 2;  break;
+      case 3: r1 = seq[seq[i+1]]; if(seq[i+1]>length||seq[i+1]<0){goto git;} i += 2;  break;
+      case 4: r2 = seq[seq[i+1]]; if(seq[i+1]>length||seq[i+1]<0){goto git;} i += 2;  break;
       case 5: r1 = r2; i+=1; break;
       case 6: r1 = seq[r2]; i+=1; break;
-      case 7: seq[r1] = r2;       if(seq[r1]>127||seq[r1]<-127){printf("Out of boundaries! Halt!\n");b=80;goto git;} i += 1; break;
-      case 8: seq[seq[i+1]] = r1; if(seq[seq[i+1]]>127||seq[seq[i+1]]<-127){printf("Out of boundaries! Halt!\n");b=80;goto git;} i += 2; break;
+      case 7: seq[r1] = r2;       if(seq[r1]>127||seq[r1]<-127){b=80;goto git;} i += 1; break;
+      case 8: seq[seq[i+1]] = r1; if(seq[seq[i+1]]>127||seq[seq[i+1]]<-127){b=80;goto git;} i += 2; break;
       case 9: i = seq[i+1];  break;
       case 10: if(r1 == 0){ i += 2; } else{ i = seq[i+1]; }  break;
       case 11: r1 = r1 + r2; i += 1;  break;
