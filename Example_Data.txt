@@ -9,3 +9,34 @@ len:25
 
 len:31
 3 1 14 10 5 6 15 2 6 6 2 1 14 3 5 2 14 3 15 7 7 9 4 15 11 1 9 7 1 4 0
+
+Example program: GCD (Ebob)
+(---Replace X, Y with your numbers---)
+where ( FinalR2 or [4] ) will be equal to gcd of x,y -> gcd(x,y)!
+len:30
+----------------------------------------------------------------------------------------
+9 5 x y 0 3 2 4 3 8 4  16 10 15 0  3  4  14 10 25 5  4  4  9  27 3  4  12 9  9   
+
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  len:30
+----------------------------------------------------------------------------------------
+(try solving this by hand first to get an intuitive feeling.., then play with it in the1Machine)
+
+-> pseudecode:
+
+r1=x ve r2=y yap 
+
+program başı:
+(ilk r1 değişmesi): sayılar aynı mı? kontrol et :: 
+
+::0 -> sayılar aynı. programı bitir.
+::-1,1 -> değil, devam et
+
+r1'i geri al
+(ikinci r1 değişmesi): r1 r2'ye bölünüyor mu?:: (0 değilse r1 daha büyük olmalı.)
+
+::değilse: r1i r2 yap ve r2yi eski r1 yap
+::0sa: r1 daha büyük. r1'i geri getir ve devam et 
+
+r1'den r2'yi çıkart. program başına dön.
+
+final r2: gcd
