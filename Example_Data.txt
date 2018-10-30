@@ -31,11 +31,12 @@ program başı:
 ::0 -> sayılar aynı. programı bitir.
 ::-1,1 -> değil, devam et
 
-r1'i geri al
+eski r1'i geri yükle
+
 (ikinci r1 değişmesi): r1 r2'ye bölünüyor mu?:: (0 değilse r1 daha büyük olmalı.)
 
-::değilse: r1i r2 yap ve r2yi eski r1 yap
-::0sa: r1 daha büyük. r1'i geri getir ve devam et 
+::0sa: r2 daha büyük(integer division). r1i r2 yap ve r2yi eski r1 yap
+::değilse: r1 daha büyük. r1'i geri getir ve devam et 
 
 r1'den r2'yi çıkart. program başına dön.
 
