@@ -6,7 +6,7 @@ Feel free to contribute :)
 Don't forget to execute the command:
 "chmod 700 the1solver" if you get permission errors!
 
-Contributors:
+Best wishes, from our contributors:
 * Yiğit Soylu
 * Ahmet İlker Koşaroğlu
 * Utku Birkan
